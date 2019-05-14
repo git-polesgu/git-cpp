@@ -1,0 +1,38 @@
+﻿#include <iostream>
+
+int main()
+{
+	int num1, num2;
+	int result = 0;
+	char symbol = ' ';
+
+	std::cout << "number1= ";
+	std::cin >> num1;
+
+	std::cout << "number2= ";
+	std::cin >> num2;
+	std::cout << "operation symbol (/*+-) = ";
+	std::cin >> symbol;
+
+	switch (symbol)
+	{
+	case '/': {
+		result = num1 / num2;
+		break;
+	}
+	case '*': {
+		result = num1 * num2;
+		break;
+	}
+	case '-': {
+		result = num1 - num2;
+		break;
+	}
+	case '+': {
+		result = num1 + num2;
+		break;
+	}
+	}
+
+	std::cout << "result = " << result;
+}
