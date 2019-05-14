@@ -13,8 +13,7 @@ int main() {
 			break;
 
 		case 1:
-			int Y = 10;
-			std :: cout << "tue" << Y << std :: endl;
+			std :: cout << "tue" << Z << std :: endl;
 			break;
 		case 2:
 			std :: cout << "wen" << std :: endl;
