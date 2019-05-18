@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+ int a,b;
+std::cout<<"Vvedite dva chisla\n";
+ std::cin>>a;
+ std::cin>>b;
+ char c;
+ std::cout<<"vvedite znak\n";
+std:: cin>>c;
+ switch(c)
+ {
+     case '+':
+    {
+     std::cout<<a+b;
+     break;
+    }
+case '-':
+    {
+     std::cout<<a-b;   
+     break;
+    }
+case '*':
+    {
+     std::cout<<a*b;
+     break;
+    }
+case '/':
+    {
+     std::cout<<a/b;   
+     break;
+    }
+ }
+}

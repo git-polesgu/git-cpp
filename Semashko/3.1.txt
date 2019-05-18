@@ -1,0 +1,155 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int a;
+    std:: cout<<"Vvedite celoe chislo (1-3999)\n";
+    std:: cin>>a;
+    int k;
+    if(a>=1000)
+    {
+        k=a/1000;
+        switch(k)
+           {
+                case 1:
+                {
+                    std::cout<<"M";
+                    a-=1000;
+                    break;
+                }
+                case 2:
+                {
+                    std::cout<<"MM";
+                    a-=2000;
+                    break;
+                }
+                case 3:
+                {
+                    std::cout<<"MMM";
+                    a-=3000;
+                    break;
+                }
+           }
+    }
+    if(a<1000 && a>=900)
+        {
+            a=a-900;
+             std::cout<<"CM";
+        }
+     if(a<900 && a>=500)
+        {
+           a=a-500;
+             std::cout<<"D";
+        }
+    if(a<500 && a>=400)
+        {
+           a=a-400;
+             std::cout<<"CD";
+        }
+        if(a<400 && a>=100)
+        {
+           k=a/100;
+           switch(k)
+           {
+                case 1:
+                {
+                    std::cout<<"C";
+                    a-=100;
+                    break;
+                }
+                case 2:
+                {
+                    std::cout<<"CC";
+                    a-=200;
+                    break;
+                }
+                case 3:
+                {
+                    std::cout<<"CCC";
+                    a-=300;
+                    break;
+                }
+           }
+        }
+        if(a<100 && a>=90)
+        {
+           a=a-90;
+             std::cout<<"XC";
+        }
+        if(a<90 && a>=50)
+        {
+           a=a-50;
+             std::cout<<"L";
+        }
+        if(a<50  && a>=40)
+        {
+           a=a-40;
+             std::cout<<"XL";
+        }
+        if(a<40 && a>=10)
+        {
+           k=a/10;
+           switch(k)
+           {
+                case 1:
+                {
+                    std::cout<<"X";
+                    a-=10;
+                    break;
+                }
+                case 2:
+                {
+                    std::cout<<"XX";
+                    a-=20;
+                    break;
+                }
+                case 3:
+                {
+                    std::cout<<"XXX";
+                    a-=30;
+                    break;
+                }
+           }
+        }
+        if(a==9)
+        {
+            a=a-9;
+             std::cout<<"IX";
+        }
+        if(a<9 && a>=5)
+        {
+           a-=5;
+           std::cout<<"V";
+        }
+        if(a==4)
+        {
+           a=a-4;
+             std::cout<<"IV";
+        }
+        if(a>=1 && a<4)
+        {
+            switch(a)
+           {
+                case 1:
+                {
+                    std::cout<<"I";
+                    a-=1;
+                    break;
+                }
+                case 2:
+                {
+                    std::cout<<"II";
+                    a-=2;
+                    break;
+                }
+                case 3:
+                {
+                    std::cout<<"III";
+                    a-=3;
+                    break;
+                }
+           }
+        }
+}
+

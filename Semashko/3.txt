@@ -1,0 +1,81 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int a;
+    std:: cout<<"Vvedite celoe chislo (1-3999)\n";
+    std:: cin>>a;
+
+    while(a!=0)
+    {
+        if(a>=1000)
+        {
+            a-=1000;
+            std::cout<<"M";
+        }
+        if(a<1000 && a>=900)
+        {
+            a=a-900;
+             std::cout<<"CM";
+        }
+        if(a<900 && a>=500)
+        {
+           a=a-500;
+             std::cout<<"D";
+        }
+        if(a<500 && a>=400)
+        {
+           a=a-400;
+             std::cout<<"CD";
+        }
+        if(a<400 && a>=100)
+        {
+           a=a-100;
+             std::cout<<"C";
+        }
+        if(a<100 && a>=90)
+        {
+           a=a-90;
+             std::cout<<"XC";
+        }
+        if(a<90 && a>=50)
+        {
+           a=a-50;
+             std::cout<<"L";
+        }
+        if(a<50  && a>=40)
+        {
+           a=a-40;
+             std::cout<<"XL";
+        }
+        if(a<40 && a>=10)
+        {
+           a=a-10;
+             std::cout<<"X";
+        }
+        if(a==9)
+        {
+            a=a-9;
+             std::cout<<"IX";
+        }
+        if(a<9 && a>=5)
+        {
+           a-=5;
+             std::cout<<"V";
+        }
+        if(a==4)
+        {
+           a=a-4;
+             std::cout<<"IV";
+        }
+        if(a>=1 && a<4)
+        {
+           a=a-1;
+             std::cout<<"I";
+        }
+    }
+    
+   
+
+}

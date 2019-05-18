@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+ std:: string a;
+ std::cout<<"vvedite celoe chislo\n";
+ std::cin>>a;
+ if(a[a.length()-1]==48+1)
+ {
+    if(a[a.length()-2]==48+1) std::cout<<a<<" derevev";
+    else std::cout<<a<<" derevo";
+ }
+ if(a[a.length()-1]>48+1 &&a[a.length()-1]<=48+4) 
+ {
+     if(a[a.length()-2]==48+1) std::cout<<a<<" derevev";
+    else std::cout<<a<<" dereva";
+ }
+if((a[a.length()-1]>=48+5 && a[a.length()-1]<=48+9) ||a[a.length()-1]==48) std::cout<<a<<" derevev"; 
+}
