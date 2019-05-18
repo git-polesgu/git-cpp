@@ -47,7 +47,6 @@ int main()
             {
                 final = 'L' + string((y-5),'X') + final;
             }
-
             else if (y == 9)
             {
                 final = "XC" + final;
