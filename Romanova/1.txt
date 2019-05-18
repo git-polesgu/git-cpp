@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    std:: string s;
+    std:: cout<<"number: ";
+    std:: cin>>s;
+    int a,b;
+    a = s[s.length()-1]-48;
+    b = s[s.length()-2]-48;
+    if(a==1)
+    {
+        if(b==1) {std:: cout<<"derev'ev";}
+        else {std:: cout<<"derevo";}
+    }
+    else
+    {
+    if(a==2 || a==3 || a==4) 
+    {
+        if(b>=1) {std:: cout<<"derev'ev";}
+        else {std:: cout<<"dereva";}
+    }
+    else std:: cout<<"derev'ev";
+    }
+}
