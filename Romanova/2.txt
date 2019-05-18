@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int a,b;
+    char s;
+    
+    std:: cout<<"a=";
+    std:: cin>>a;
+    
+    std:: cout<<"b=";
+    std:: cin>>b;
+    
+    std:: cout<<"symbol operation=";
+    std:: cin>>s;
+    
+    switch (s)
+ {
+    case '+':
+    {
+        std:: cout<< a+b; break;
+    }
+     case '-':
+    {
+        std:: cout<< a-b; break;
+    }
+     case '*':
+    {
+        std:: cout<< a*b; break;
+    }
+     case '/':
+    {
+        std:: cout<< a/b; break;
+    }
+    default:
+        std:: cout<<"error";
+ }    
+}
