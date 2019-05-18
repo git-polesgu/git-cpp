@@ -68,7 +68,6 @@ int main()
             {
                 final = 'D' + string((y-5),'C') + final;
             }
-
             else if (y == 9)
             {
                 final = "CM" + final;
