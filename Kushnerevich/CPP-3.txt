@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x;
+    int y;
+
+    string final;
+    
+    cin >> x;
+    for(int i = 1; i <= 4; i++)
+    {
+        y = x % 10;
+        if (i == 1)
+        {
+            if (y >= 1 && y <= 3)
+            {
+                final = string(y,'I') + final;
+            }
+            else if (y == 4)
+            {
+                final = "IV" + final;
+            }
+            else if (y >= 5 && y<= 8)
+            {
+                final = 'V' + string((y-5),'I') + final;
+            }
+            else if (y == 9)
+            {
+                final = "IX" + final;
+            }
+        }
+        
+        else if (i == 2)
+        {
+            if (y >= 1 && y <= 3)
+            {
+                final =  string(y,'X') + final;
+            }
+            else if (y == 4)
+            {
+                final = "XL" + final;
+            }
+            else if (y >= 5 && y<= 8)
+            {
+                final = 'L' + string((y-5),'X') + final;
+            }
+
+            else if (y == 9)
+            {
+                final = "XC" + final;
+            }
+        }
+        
+        else if (i == 3)
+        {
+            if (y >= 1 && y <= 3)
+            {
+                final =  string(y,'C') + final;
+            }
+            else if (y == 4)
+            {
+                final = "CD" + final;
+            }
+            else if (y >= 5 && y<= 8)
+            {
+                final = 'D' + string((y-5),'C') + final;
+            }
+
+            else if (y == 9)
+            {
+                final = "CM" + final;
+            }
+        }
+        else
+        {
+            if (y >= 1 && y <= 3)
+            {
+                final =  string(y,'M') + final;
+            }
+        }
+        x = x / 10;
+    }
+    cout << final;
+    return 0;
+}
