@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#include <iostream>
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int a,b;
+	char c;
+	std::cin>>a;
+	std::cin>>b;
+	std::cin>>c;
+	switch(c)
+	{
+	case '+':
+		{std::cout<< a + b<<std::endl;
+		break;
+		}
+
+	case '-':
+		{
+			std::cout<<a-b<<std::endl;
+			break;
+		}
+	case'*':
+		{
+			std::cout<<a*b<<std::endl;
+			break;
+		}
+
+	case '/':
+		{
+			std::cout<<a/b<<std::endl;
+			break;
+		}
+
+	default:
+		{break;}
+		
+	}
+	return 0;
+}

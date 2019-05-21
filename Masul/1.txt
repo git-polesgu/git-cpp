@@ -1,0 +1,19 @@
+#include "stdafx.h"
+#include <iostream>
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	setlocale(LC_ALL, "Russian");
+	int number;
+	std::cin>>number;
+	int numbers[2];
+	numbers[0]=number%10;
+	numbers[1]=(number/10)%10;
+	std::cout<<numbers[0]<<"      "<<numbers[1]<<std::endl;
+	if(numbers[0]==1&&numbers[1]!=1)
+	{std::cout<<number<<" дерево "<<std::endl;
+	}else if(numbers[0]>1&&numbers[0]<5&&numbers[1]!=1)
+	{std::cout<<number<<" дерева "<<std::endl;
+	} else std::cout<<number<<" деревьев "<<std::endl;
+	return 0;
