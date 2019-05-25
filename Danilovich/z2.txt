@@ -1,0 +1,22 @@
+#include <iostream>
+#include <time.h>
+
+
+int main()
+{
+	srand(time(NULL));//для "настоящего" рандома при каждом запуске программы (нужно подключить time.h)
+
+	std::cout << "n=";
+	int n = 0;
+	std::cin >> n;
+	int *p = new int[n+1];
+
+	*(p + n + 1) = 1234554321;
+
+	int i = 0;
+	while (*(p+i+1)!= 1234554321)
+	{
+		i++;
+	}
+	std::cout << std::endl << "size=" << i;
+}

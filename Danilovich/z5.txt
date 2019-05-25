@@ -1,0 +1,58 @@
+#include <iostream>
+#include <time.h>
+
+
+int main()
+{
+	srand(time(NULL));//для "настоящего" рандома при каждом запуске программы (нужно подключить time.h)
+
+	int m[9];
+	int* ar = m;
+
+	for (int i = 0; i < sizeof(m) / sizeof(int); i++)
+	{
+		*(ar + i) = rand() % 100;
+		std::cout << *(ar + i) << ' ';
+	}
+	std::cout << std::endl;
+
+	std::cout << "var1:" << std::endl;
+
+	for (int i = 0; i < sizeof(m) / sizeof(int); i++)
+	{
+		int min_i = i;
+		for (int j = i; j < sizeof(m) / sizeof(int); j++)
+		{
+			if (*(ar + min_i) > *(ar + j))
+			{
+				min_i = j;
+			}
+		}
+
+		int temp = *(ar + i);
+		*(ar + i) = *(ar + min_i);
+		*(ar + min_i) = temp;
+
+		std::cout << *(ar + i) << ' ';
+	}
+
+	std::cout <<std::endl<< "var2:" << std::endl;
+
+	for (int i = 0; i < sizeof(m) / sizeof(int); i++)
+	{
+		int min_i = i;
+		for (int j = i; j < sizeof(m) / sizeof(int); j++)
+		{
+			if (*(ar + min_i) < *(ar + j))
+			{
+				min_i = j;
+			}
+		}
+
+		int temp = *(ar + min_i);
+		*(ar + min_i) = *(ar + i);
+		*(ar + i) = temp;
+
+		std::cout << *(ar + i) << ' ';
+	}
+}

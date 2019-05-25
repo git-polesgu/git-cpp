@@ -1,0 +1,69 @@
+#include <iostream>
+#include <time.h>
+
+int main()
+{
+	srand(time(NULL));
+	int const s = 5;
+	int m[s][s];
+	int** a = new int*[s];
+
+	for (int i = 0; i < sizeof(m) / sizeof(m[0]); i++)
+	{
+		*(a + i) = m[i];
+		for (int j = 0; j < sizeof(m[0]) / sizeof(int); j++)
+		{
+			*(*(a + i) + j) = rand()%100;
+			std::cout.width(3);
+			std::cout << *(*(a + i) + j);
+		}
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	while (true)
+	{
+		int count = 0;
+		for (int i = 0; i < sizeof(m) / sizeof(m[0]); i++)
+		{
+			for (int j = 0; j < sizeof(m[0]) / sizeof(int); j++)
+			{
+				if (j != sizeof(m[0]) / sizeof(int)-1)
+				{
+					if (*(*(a + i) + j) > *(*(a + i) + j + 1)) {
+						count++;
+						int temp = *(*(a + i) + j);
+						*(*(a + i) + j) = *(*(a + i) + j + 1);
+						*(*(a + i) + j+1) = temp;
+					}
+				}
+				else
+				{
+					if(i!= sizeof(m) / sizeof(m[0])-1)
+						if (*(*(a + i) + j) > *(*(a + i+1) + 0)) {
+							count++;
+							int temp = *(*(a + i) + j);
+							*(*(a + i) + j) = *(*(a + i+1) + 0);
+							*(*(a + i+1) + 0) = temp;
+						}
+				}
+					
+			}
+		}
+
+		if (count == 0) {
+			break;
+		}
+	}
+
+	for (int i = 0; i < sizeof(m) / sizeof(m[0]); i++)
+	{
+		for (int j = 0; j < sizeof(m[0]) / sizeof(int); j++)
+		{
+			std::cout.width(3);
+			std::cout << *(*(a + i) + j);
+		}
+		std::cout << std::endl;
+	}
+}
