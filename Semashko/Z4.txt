@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+
+int main()
+{
+	srand(time(NULL));
+	int A[9];
+	int B[9];
+	int *m = A;
+	int n = sizeof(A) / sizeof(int);
+	for (int i = 0; i < n; i++)
+	{
+		*(m + i) = rand() % 100;
+		std::cout << *(m + i) << ' ';
+	}
+	std::cout<<std::endl;
+	for (int i = n-1; i >-1; i--)
+	{
+		B[n-i-1] = A[i];
+		std::cout << B[n - i - 1] << ' ';
+	}
+	
+	return 0;
+}  

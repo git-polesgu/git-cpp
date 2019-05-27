@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <time.h>
+
+int main()
+{
+	int const p = 30;
+	int a[p][p];
+	int n;
+	std::cout << "vvedite : " << std::endl;
+	std::cin >> n;
+	int **m = new int*[p];
+	for (int i = 0; i < sizeof(a) / sizeof(a[0]); i++)
+	{
+		*(m + i) = a[i];
+	}
+	for (int i = 0; i < p; i++) 
+	{ 
+		*(*(m+0)+i) = 1; 
+		*(*(m+i)+0) = 1; 
+	}
+
+	for (int i = 1; i < n; i++)
+		for (int j = 1; j < n; j++)
+		{
+			*(*(m + i) + j) = *(*(m + (i - 1)) + j) + *(*(m + i) + (j - 1));
+		}
+
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			std::cout << *(*(m + j) + (i-j)) << ' ';
+		}
+		std::cout <<std:: endl;
+	}
+
+	return 0;
+}  
