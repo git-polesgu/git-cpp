@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+  int const n = 5; 
+	int a[n][n];
+	int **k= new int*[n];
+    int h = sizeof(a)/sizeof(a[0]); 
+	for (int i = 0; i < h; i++)
+	{
+		*(k + i) = a[i];
+	}
+	int l = 1;
+	int m = n/2;
+	for(int c=1; c<=m; c++)
+	{
+	    for(int j=c-1; j<n-c+1; j++) 
+	       *(*(k+c-1)+j)=l++;
+	    for (int j=c;j<n-c+1;j++) 
+            *(*(k+j)+n-c)=l++;
+        for (int j=n-c-1;j>=c-1;--j) 
+            *(*(k+n-c)+j)=l++;
+        for (int j=n-c-1;j>=c;j--) 
+            *(*(k+j)+c-1)=l++;
+	}
+	if (n%2==1) 
+        a[m][m]=n*n;
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			std::cout.width(3);
+			std::cout << *(*(k+i)+j) << ' ';
+		}
+		std::cout << std::endl;
+	}
+	return 0;
+}
