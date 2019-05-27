@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int b[10];
+    int *a[10];
+
+    int **max = &a[0];
+    int **max2 = &a[0];
+    /**************** cycle 1 ****************/
+    int i = 0; //increment
+    do{
+        b[i] = rand()%100;
+        a[i] = &b[i]; 
+        if (**max < *a[i]){
+        **max = *a[i];
+        max = &a[i];
+        }
+        cout<< a[i] << " " << *a[i] << endl;
+        i++;
+    }while(i < sizeof(b)/sizeof(int));
+    /**************** cycle 2 ****************/
+    i = 0;
+        do{
+        if (*a[i] < **max && **max2 < *a[i]){
+        **max2 = *a[i];
+        max2 = &a[i];
+        }
+        i++;
+    }while(i < sizeof(b)/sizeof(int));
+    /**************** result ****************/
+
+    cout<<"[MAX 1] Address: " <<max << " points to address a[i]: " << *max << " which points to value b[i]: " << **max << endl;
+    cout<<"[MAX 2] Address: " <<max2 << " points to address a[i]: " << *max2 << " which points to value b[i]: " << **max2 << endl;
+    return 0;
+}
