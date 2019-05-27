@@ -4,29 +4,28 @@
 
 int main()
 {
+	srand(time(NULL));
 	int const n = 4;
 	int A[n][n];
 	int **m = new int*[n];
 	for (int i = 0; i < sizeof(A) / sizeof(A[0]); i++)
 	{
 		*(m + i) = A[i];
-	}
-	int k = sizeof(A) / sizeof(A[0]);
-	for (int i = 0; i < n; i++)
-	{
 		for (int j = 0; j < n; j++)
 		{
 			*(*(m + i) + j) = rand() % 100;
+			std::cout.width(3);
 			std::cout << *(*(m + i) + j) << ' ';
 		}
 		std::cout << std ::endl;
 	}
+	std::cout << std ::endl;
 	while (true)
 	{
 		int c = 0;
-		for (int i = 0; i < n - 1; i++)
+		for (int i = 0; i < sizeof(A) / sizeof(A[0]); i++)
 		{
-			for (int j = 0; j < n - 1; j++)
+			for (int j = 0; j < sizeof(A) / sizeof(A[0]); j++)
 			{
 				if (j!= sizeof(A[0]) / sizeof(int) - 1)
 				{
