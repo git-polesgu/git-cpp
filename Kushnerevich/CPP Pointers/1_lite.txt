@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int mass[10];
+	int* ptr=mass;
+    int i = 0;
+    int max = *ptr;
+    int max2 = *ptr;
+    while(i < sizeof(mass)/sizeof(int)){
+        *(ptr+i) = rand()%100;
+        if (*(ptr+i) > max){
+            max = *(ptr+i);
+        }
+        if(*(ptr+i) < max && max2 < *(ptr+i)){
+            max2 = *(ptr+i);
+        }
+        i++;
+    }
+	std::cout << "The first maximum: " << max << std::endl << "The second maximum: " << max2 << std::endl;
+
+}
