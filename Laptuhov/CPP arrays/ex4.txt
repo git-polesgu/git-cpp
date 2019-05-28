@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{   
+    int* a = new int [10];
+    for(int i=0;i<10;i++)
+    {
+        *(a+i)=i;
+        cout << *(a+i) << " ";
+    }
+    cout<< endl;
+    
+    //method 1
+    for(int i=9;i>=0;i--)
+    {
+        cout << *(a+i) << " ";
+    }
+    cout << endl;
+    
+    //method 2
+    int* a1 = new int [10];
+    for(int i=0,y=9;i<10,y>=0;i++,y--)
+    {
+        *(a1+i)=*(a+y);
+        cout << *(a1+i) << " ";
+    }
+}
