@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+ 
+int main()
+{
+    int const m = 20;
+    int a[m][m]; 
+    int n;
+    std:: cin >> n;
+    int **k = new int*[m];
+    int l = sizeof(a) / sizeof(a[0]);
+    for (int i = 0; i < l; i++)
+	{
+		*(k + i) = a[i];
+	}
+    for (int i = 0; i < m; i++) 
+    {
+        *(*(k+0)+i) = 1; 
+		*(*(k+i)+0) = 1; 
+    }
+    for (int i = 1; i < n; i++)
+    {
+      for (int j = 1; j < n; j++)
+      {
+        *(*(k+i)+j) = *(*(k+(i-1))+j)+*(*(k+i)+(j-1));
+      }
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            std:: cout << *(*(k+j)+(i-j)) << ' ';
+        }
+       std:: cout << std:: endl;
+    }
+    return 0;
+}

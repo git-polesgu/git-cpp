@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int a[15];
+    int *k = &a[0];
+    int n=sizeof(a)/sizeof(int);
+    for(int i = 0; i<n; i++ )
+    {
+        *(k+i)=rand()%100-50;
+        std:: cout<< *(k+i) <<' ';
+    }
+    for(int i = 0; i<sizeof(a)/(sizeof(int)*2); i++)
+    {
+        int p = *(k+i);
+        *(k+i)=*(k+n-(i+1));
+        *(k+n-(i+1))=p;
+    }
+    std:: cout<<"\n";
+    for(int i = 0; i<n; i++)
+    std:: cout<< *(k+i)<< ' ';
+    return 0;
+}

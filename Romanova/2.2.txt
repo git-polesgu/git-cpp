@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int n; 
+	std::cin >> n;
+	int *k= new int[n+1];
+	*k = n;
+	for (int i = 1; i < *k; i++)
+	{
+		*(k + i) = rand() % 100-50;
+		std::cout << *(k + i) << ' ';
+	}
+	std::cout<<std::endl << "Size = " << *k;
+}

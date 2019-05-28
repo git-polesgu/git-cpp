@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    int a[10];
+    int *k = &a[0];
+    int n=sizeof(a)/sizeof(int);
+    for(int i = 0; i<n; i++ )
+    {
+        *(k+i)=rand()%100-50;
+        std:: cout<< *(k+i) <<' ';
+    }
+    for(int i = 0; i<n-1; i++)
+    {
+        int min = i;
+        for(int j = i+1; j<n; j++)
+        {
+            if(*(k+j)<*(k+min))
+            min = j;
+        }
+        std::swap(*(k+i), *(k+min));
+    }
+    std:: cout<<"\n";
+    for(int i = 0; i<n; i++)
+    std:: cout<< *(k+i)<< ' ';
+    return 0;
+}
