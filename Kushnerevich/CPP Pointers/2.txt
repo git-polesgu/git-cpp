@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int num;
+    cout << "Enter value:" <<endl;
+    cin >> num;
+    int *ptr_mass = new int[num];
+    int *q = ptr_mass;
+    int length = 0;
+    while(q != ptr_mass + num){
+        q++;
+        length++;
+    }
+    cout << "Length: " << length << endl;
+    delete [] ptr_mass;
+}
