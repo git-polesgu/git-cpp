@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{ 
+int mass[10];
+int* ptr = mass;
+for(int i=0; i < sizeof(mass)/sizeof(int); i++){
+    *(ptr+i)= rand()%100;
+    cout << *(ptr+i) << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < sizeof(mass)/sizeof(int); i++){
+        int min_i = i;
+        for (int j = i; j < sizeof(mass)/sizeof(int); j++){
+            if (*(ptr + min_i) > *(ptr + j)){
+            min_i = j;
+        }
+    }
+
+    int temp = *(ptr + i);
+    *(ptr + i) = *(ptr + min_i);
+    *(ptr + min_i) = temp;
+    std::cout << *(ptr + i) << ' ';
+   }
+}
